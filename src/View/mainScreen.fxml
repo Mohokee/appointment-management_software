@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="598.0" prefWidth="753.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.mainScreenController">
+   <children>
+      <GridPane layoutX="12.0" layoutY="282.0" prefHeight="259.0" prefWidth="714.0">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="714.0" minWidth="10.0" prefWidth="714.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="64.0" minWidth="0.0" prefWidth="0.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <TabPane prefHeight="259.0" prefWidth="710.0" tabClosingPolicy="UNAVAILABLE">
+              <tabs>
+                  <Tab text="View All Appointments">
+                      <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                              <children>
+                                  <TableView fx:id="allAppointmentsTable" prefHeight="221.0" prefWidth="695.0">
+                                      <columns>
+                                          <TableColumn fx:id="allApptId" prefWidth="25.0" text="ID" />
+                                          <TableColumn fx:id="allApptTitle" prefWidth="70.0" text="Title" />
+                                          <TableColumn fx:id="allApptDescript" prefWidth="89.0" text="Description" />
+                                          <TableColumn fx:id="allApptLocation" prefWidth="85.0" text="Location" />
+                                          <TableColumn fx:id="allApptContact" prefWidth="66.0" text="Contact ID" />
+                                          <TableColumn fx:id="allApptType" prefWidth="94.0" text="Type" />
+                                          <TableColumn fx:id="allApptStart" prefWidth="58.0" text="Start " />
+                                          <TableColumn fx:id="allApptEnd" prefWidth="67.0" text="End" />
+                                          <TableColumn fx:id="allApptCustId" prefWidth="79.0" text="Customer ID" />
+                                    <TableColumn fx:id="allApptUserId" prefWidth="64.0" text="User ID" />
+                                      </columns>
+                                  </TableView>
+                              </children>
+                          </AnchorPane>
+                      </content>
+                  </Tab>
+                <Tab text="Weekly">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="220.0" prefWidth="724.0">
+                           <children>
+                              <TableView fx:id="weeklyAppointments" layoutX="-3.0" prefHeight="221.0" prefWidth="716.0">
+                                <columns>
+                                  <TableColumn fx:id="apptId" prefWidth="47.0" text="ID" />
+                                  <TableColumn fx:id="apptTitle" prefWidth="69.0" text="Title" />
+                                    <TableColumn fx:id="apptDescription" prefWidth="94.0" text="Description" />
+                                    <TableColumn fx:id="apptLocation" prefWidth="79.0" text="Location" />
+                                    <TableColumn fx:id="apptContact" prefWidth="64.0" text="Contact ID" />
+                                    <TableColumn fx:id="apptType" prefWidth="54.0" text="Type" />
+                                    <TableColumn fx:id="apptStart" prefWidth="74.0" text="Start " />
+                                    <TableColumn fx:id="apptEnd" prefWidth="78.0" text="End" />
+                                    <TableColumn fx:id="apptCustId" prefWidth="85.0" text="Customer ID" />
+                                    <TableColumn fx:id="apptUserId" prefWidth="85.0" text="User ID" />
+                                </columns>
+                              </TableView>
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+                <Tab text="Monthly">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <TableView fx:id="monthlyAppointments" prefHeight="221.0" prefWidth="714.0">
+                                 <columns>
+                                    <TableColumn fx:id="monthApptId" prefWidth="47.0" text="ID" />
+                                    <TableColumn fx:id="monthApptTitle" prefWidth="69.0" text="Title" />
+                                    <TableColumn fx:id="monthApptDescript" prefWidth="94.0" text="Description" />
+                                    <TableColumn fx:id="monthApptLocation" prefWidth="79.0" text="Location" />
+                                    <TableColumn fx:id="monthApptContact" prefWidth="64.0" text="Contact ID" />
+                                    <TableColumn fx:id="monthApptType" prefWidth="54.0" text="Type" />
+                                    <TableColumn fx:id="monthApptStart" prefWidth="74.0" text="Start " />
+                                    <TableColumn fx:id="monthApptEnd" prefWidth="78.0" text="End" />
+                                    <TableColumn fx:id="monthApptCustId" prefWidth="85.0" text="Customer ID" />
+                                    <TableColumn fx:id="monthApptUserId" prefWidth="85.0" text="User ID" />
+                                 </columns>
+                              </TableView>
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+              </tabs>
+            </TabPane>
+         </children>
+      </GridPane>
+      <VBox prefHeight="200.0" prefWidth="100.0" />
+      <Button layoutX="89.0" layoutY="546.0" mnemonicParsing="false" onAction="#addAppointment" text="Add Appointment" />
+      <Button layoutX="265.0" layoutY="546.0" mnemonicParsing="false" onAction="#changeSceneToUpdateAppointment" text="Update Appointment" />
+      <Button layoutX="446.0" layoutY="546.0" mnemonicParsing="false" onAction="#deleteAppointment" text="Delete Appointment" />
+      <GridPane prefHeight="248.0" prefWidth="682.0">
+        <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="458.0" minWidth="10.0" prefWidth="63.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="499.0" minWidth="10.0" prefWidth="441.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="336.0" minWidth="10.0" prefWidth="16.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="336.0" minWidth="10.0" prefWidth="267.0" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints maxHeight="45.0" minHeight="10.0" prefHeight="28.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="53.0" minHeight="7.0" prefHeight="17.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="199.0" minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="217.0" minHeight="10.0" prefHeight="130.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="77.0" minHeight="2.0" prefHeight="41.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <TableView fx:id="mainCustTable" prefHeight="172.0" prefWidth="412.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+              <columns>
+                <TableColumn fx:id="customerIdColumn" prefWidth="33.0" text="ID" />
+                <TableColumn fx:id="customerNameColumn" prefWidth="51.0" text="Name" />
+                  <TableColumn fx:id="customerAddressColumn" prefWidth="74.0" text="Address" />
+                  <TableColumn fx:id="customerZip" prefWidth="74.0" text="Postal Code" />
+                  <TableColumn fx:id="customerDivisionIdColumn" prefWidth="74.0" text="Division ID" />
+                  <TableColumn fx:id="customerPhoneColumn" prefWidth="101.0" text="Phone " />
+              </columns>
+            </TableView>
+            <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <children>
+                  <Label prefHeight="31.0" prefWidth="583.0" text="Customer Appointment Schedule">
+                     <font>
+                        <Font size="21.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <GridPane GridPane.columnIndex="1" GridPane.rowIndex="4">
+              <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="142.0" minWidth="10.0" prefWidth="22.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="209.0" minWidth="10.0" prefWidth="138.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="222.0" minWidth="10.0" prefWidth="155.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="134.0" minWidth="10.0" prefWidth="130.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints maxHeight="25.0" minHeight="0.0" prefHeight="0.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="38.0" minHeight="0.0" prefHeight="38.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="29.0" minHeight="0.0" prefHeight="0.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Button mnemonicParsing="false" onAction="#addCustomer" text="Add Customer" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <Button mnemonicParsing="false" onAction="#changeSceneToUpdateCustomer" text="Update Customer" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                  <Button mnemonicParsing="false" onAction="#deleteCustomer" text="Delete Customer" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+               </children>
+            </GridPane>
+            <Label prefHeight="42.0" prefWidth="84.0" text="Reports" GridPane.columnIndex="3" GridPane.rowIndex="2">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <VBox prefHeight="188.0" prefWidth="243.0" GridPane.columnIndex="3" GridPane.rowIndex="3">
+               <children>
+                  <HBox prefHeight="15.0" prefWidth="243.0" />
+                  <Button mnemonicParsing="false" onAction="#monthTypeReportGo" text="Total Appointments by Month &amp; Type" />
+                  <HBox prefHeight="17.0" prefWidth="243.0" />
+                  <Button mnemonicParsing="false" onAction="#apptLocationReportGo" text="Appointments by Location" />
+                  <HBox prefHeight="18.0" prefWidth="234.0" />
+                  <Button mnemonicParsing="false" onAction="#contactScheduleReportGo" text="Contact Schedules" />
+               </children>
+            </VBox>
+            <Label prefHeight="21.0" prefWidth="84.0" text="Customers" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <HBox prefHeight="16.0" prefWidth="208.0" GridPane.columnIndex="3" GridPane.rowIndex="1">
+               <children>
+                  <HBox prefHeight="25.0" prefWidth="145.0" />
+                  <Button fx:id="exit" contentDisplay="RIGHT" mnemonicParsing="false" prefHeight="25.0" prefWidth="71.0" text="Log Out" textAlignment="RIGHT" />
+               </children>
+            </HBox>
+         </children>
+      </GridPane>
+      <Label layoutX="24.0" layoutY="256.0" prefHeight="26.0" prefWidth="130.0" text="Appointments" textAlignment="CENTER">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
